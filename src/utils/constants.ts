@@ -28,6 +28,7 @@ export const CONTACT_INFO = {
 // Navigation Links
 export const NAV_LINKS = {
   main: [
+    { name: 'INICIO', path: '/' },
     { name: 'ACERCA', path: '/acerca' },
     { name: 'SERVICIOS', path: '/servicios' },
     { name: 'RECURSOS', path: '/recursos' },
