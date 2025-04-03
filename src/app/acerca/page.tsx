@@ -37,10 +37,10 @@ export default function AboutPage() {
 
         {/* Right Column - Image and Quick Links */}
         <div>
-          <div className="rounded-lg overflow-hidden mb-8">
+          <div className="rounded-lg overflow-hidden my-8">
             <Image
-              src="/images/about-clinic.jpg"
-              alt="Hakuna Matata Clínica Veterinaria"
+              src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Interior moderno de la clínica veterinaria"
               width={600}
               height={400}
               className="w-full h-auto"
