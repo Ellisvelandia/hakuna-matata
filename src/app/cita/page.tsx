@@ -28,7 +28,7 @@ export default function CitaPage() {
   return (
     <PageLayout title="Agendar Cita">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-[#ff9800]">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-[#8cb9a3]">
           Agendar Cita
         </h2>
         
@@ -67,6 +67,8 @@ export default function CitaPage() {
     </PageLayout>
   );
 }
+
+
 
 
 

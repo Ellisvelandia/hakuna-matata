@@ -41,7 +41,7 @@ export default function VetChatPage() {
               ></textarea>
               <button 
                 type="submit"
-                className="w-full bg-[#ff9800] text-white py-2 px-4 rounded-md hover:bg-[#e68a00] transition-colors"
+                className="w-full bg-[#8cb9a3] text-white py-2 px-4 rounded-md hover:bg-[#7aa08a] transition-colors"
               >
                 Iniciar Chat
               </button>

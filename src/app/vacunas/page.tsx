@@ -54,13 +54,13 @@ export default function VaccinationPage() {
             <div className="flex space-x-4">
               <a 
                 href="/contacto" 
-                className="inline-block bg-[#ff9800] text-white py-2 px-4 rounded-md hover:bg-[#e68a00] transition-colors"
+                className="inline-block bg-[#8cb9a3] text-white py-2 px-4 rounded-md hover:bg-[#7aa08a] transition-colors"
               >
                 Contactar
               </a>
               <a 
                 href="tel:+573113603168" 
-                className="inline-block bg-white border border-[#ff9800] text-[#ff9800] py-2 px-4 rounded-md hover:bg-gray-50 transition-colors"
+                className="inline-block bg-white border border-[#8cb9a3] text-[#8cb9a3] py-2 px-4 rounded-md hover:bg-gray-50 transition-colors"
               >
                 Llamar
               </a>

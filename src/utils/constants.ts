@@ -56,8 +56,8 @@ export const NAV_LINKS = {
 
 // Theme Colors
 export const COLORS = {
-  primary: '#ff9800',
-  primaryDark: '#e68a00',
+  primary: '#8cb9a3',
+  primaryDark: '#7aa08a',
   secondary: '#ffebcd',
   text: {
     dark: '#333333',
@@ -81,5 +81,6 @@ export const PLACEHOLDER_IMAGES = {
   cat: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba',
   dog: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b',
 };
+
 
 

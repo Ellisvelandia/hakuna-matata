@@ -11,8 +11,8 @@
   --card-foreground: 240 10% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
-  --primary: #ff9800;
-  --primary-dark: #e68a00;
+  --primary: #8cb9a3;
+  --primary-dark: #7aa08a;
   --primary-foreground: 355.7 100% 97.3%;
   --secondary: #d2c0ad;
   --secondary-foreground: 240 5.9% 10%;
@@ -141,11 +141,11 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Button Styles */
   .btn-primary {
-    @apply inline-block bg-[#ff9800] text-white py-2 px-4 rounded-md font-medium hover:bg-[#e68a00] transition-colors;
+    @apply inline-block bg-[#8cb9a3] text-white py-2 px-4 rounded-md font-medium hover:bg-[#7aa08a] transition-colors;
   }
 
   .btn-secondary {
-    @apply inline-block bg-white border border-[#ff9800] text-[#ff9800] py-2 px-4 rounded-md font-medium hover:bg-gray-50 transition-colors;
+    @apply inline-block bg-white border border-[#8cb9a3] text-[#8cb9a3] py-2 px-4 rounded-md font-medium hover:bg-gray-50 transition-colors;
   }
 }
 
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Accessibility Focus Styles */
 a:focus, button:focus {
-  @apply outline-none ring-2 ring-[#ff9800] ring-opacity-50;
+  @apply outline-none ring-2 ring-[#8cb9a3] ring-opacity-50;
 }
 
 /* Custom Scrollbar */
@@ -176,10 +176,11 @@ a:focus, button:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff9800;
+  background: #8cb9a3;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e68a00;
+  background: #7aa08a;
 }
+

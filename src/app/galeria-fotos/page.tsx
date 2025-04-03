@@ -107,7 +107,7 @@ export default function PhotoGalleryPage() {
               key={category}
               className={`px-4 py-2 m-1 rounded-full ${
                 activeCategory === category
-                  ? "bg-[#ff9800] text-white"
+                  ? "bg-[#8cb9a3] text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
               onClick={() => setActiveCategory(category)}
@@ -180,3 +180,4 @@ export default function PhotoGalleryPage() {
     </PageLayout>
   );
 }
+
