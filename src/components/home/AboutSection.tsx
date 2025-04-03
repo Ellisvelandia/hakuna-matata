@@ -60,7 +60,7 @@ const features = [
 export default function AboutSection() {
   return (
     <section 
-      className="relative bg-white py-16 sm:py-24 overflow-hidden" 
+      className="relative bg-white py-12 sm:py-16 overflow-hidden" 
       aria-labelledby="about-heading"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,4 +120,5 @@ export default function AboutSection() {
     </section>
   );
 }
+
 

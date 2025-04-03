@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-gray-50 py-16 md:py-24">
+    <div className="relative bg-gray-50 py-12 md:py-16">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         {/* Left side - Text content */}
         <div className="md:w-1/2 md:pr-12 mb-10 md:mb-0">
@@ -43,3 +43,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
