@@ -47,7 +47,7 @@ export const NAV_LINKS = {
     { name: 'Esterilización', path: '/esterilizacion' },
   ],
   resources: [
-    { name: 'Solicitud de Cita', path: '/solicitud-cita' },
+    { name: 'Solicitud de Cita', path: '/cita' },
     { name: 'Formulario de Información', path: '/formulario-informacion' },
     { name: 'Registros de Mascota', path: '/registros-mascota' },
     { name: 'Preparaciones para Desastres', path: '/preparaciones-desastres' },
@@ -81,4 +81,5 @@ export const PLACEHOLDER_IMAGES = {
   cat: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba',
   dog: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b',
 };
+
 
