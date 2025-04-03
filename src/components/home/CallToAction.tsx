@@ -17,7 +17,7 @@ const CallToAction = () => {
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <Image
-          src="/hakuna-matata-logo.png"
+          src="/images/hakuna.webp"
           alt="Hakuna Matata Logo"
           width={80}
           height={80}

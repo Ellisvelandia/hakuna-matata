@@ -40,7 +40,7 @@ const Footer = () => {
               {/* Logo */}
               <div className="flex items-center mb-4">
                 <Image
-                  src="/hakuna-matata-logo.png"
+                  src="/images/hakuna.webp"
                   alt="Hakuna Matata Clinica Veterinaria"
                   width={70}
                   height={70}

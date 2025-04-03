@@ -96,7 +96,7 @@ const Header = () => {
             <Link href="/">
               <div className="flex items-center">
                 <Image
-                  src="/hakuna-matata-logo.png"
+                  src="/images/hakuna.webp"
                   alt="Hakuna Matata Clinica Veterinaria"
                   width={80}
                   height={80}

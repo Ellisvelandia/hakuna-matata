@@ -82,7 +82,7 @@ export const COLORS = {
 
 // Image Placeholders
 export const PLACEHOLDER_IMAGES = {
-  logo: '/hakuna-matata-logo.png',
+  logo: '/images/hakuna.webp',
   hero: 'https://images.unsplash.com/photo-1581888227599-779811939961',
   pet: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e',
   clinic: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7',
