@@ -87,14 +87,14 @@ export default function Header() {
   return (
     <header className="w-full shadow-sm">
       {/* Top Bar */}
-      <div className="bg-[#c5cad2] py-2 px-4">
+      <div className="bg-[#8cb9a3] py-2 px-4">
         <div className="container mx-auto flex justify-between items-center">
           <div /> {/* Spacer */}
           <div className="flex items-center">
-            <span className="mr-2 text-sm hidden md:inline">¡Llámanos!</span>
+            <span className="mr-2 text-sm hidden md:inline text-white">¡Llámanos!</span>
             <a 
               href="tel:+573113603168" 
-              className="font-semibold text-sm md:text-base hover:text-[#8cb9a3] transition-colors"
+              className="font-semibold text-sm md:text-base text-white hover:text-[#ff9800] transition-colors"
               aria-label="Llamar al +57 311 3603168"
             >
               +57 311 3603168
