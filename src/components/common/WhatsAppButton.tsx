@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 /**
  * WhatsApp floating button component that appears on all pages
- * Includes a delay before showing and scroll position detection
+ * Includes a delay before showing
  */
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,23 +15,9 @@ const WhatsAppButton = () => {
       setIsVisible(true);
     }, 1500);
 
-    // Handle scroll to hide button when at the top of the page
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    // Add scroll listener
-    window.addEventListener('scroll', handleScroll);
-
     // Clean up
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -53,3 +39,4 @@ const WhatsAppButton = () => {
 };
 
 export default WhatsAppButton;
+
