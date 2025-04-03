@@ -171,15 +171,16 @@ export default function Header() {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:block bg-[#8cb9a3]">
-        <div className="container mx-auto px-4 py-4">
-          <ul className="flex justify-center space-x-8">
+        <div className="container mx-auto px-4">
+          <ul className="flex justify-center items-center h-14 space-x-12">
             {NAV_LINKS.main.map((link) => (
               <li key={link.path}>
                 <Link
                   href={link.path}
-                  className="block text-white hover:text-[#ff9800] transition-all duration-300 hover:scale-105 transform"
+                  className="relative block text-white font-medium text-sm tracking-wide hover:text-[#e8f3ee] transition-all duration-300 group"
                 >
                   {link.name}
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
                 </Link>
               </li>
             ))}
