@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import PageLayout from '@/components/layout/PageLayout';
 import ServiceCard from '@/components/services/ServiceCard';
 
@@ -43,8 +42,8 @@ export default function ServicesPage() {
       title="Nuestros Servicios" 
       backgroundImage="https://images.unsplash.com/photo-1488015795646-7e22a773d72a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     >
-      <div className="max-w-4xl mx-auto mb-12 text-center">
-        <h2 className="text-3xl font-semibold mb-6 text-[#ff9800]">Cuidado Veterinario Integral</h2>
+      <div className="max-w-4xl mx-auto my-12 text-center">
+        <h2 className="text-3xl font-semibold mb-6 text-[#8cb9a3]">Cuidado Veterinario Integral</h2>
         <p className="text-gray-700">
           En Hakuna Matata Clínica Veterinaria, ofrecemos una amplia gama de servicios diseñados para mantener a su mascota saludable y feliz en todas las etapas de su vida. 
           Nuestro equipo de profesionales altamente capacitados utiliza las técnicas más avanzadas y equipos de última generación para proporcionar la mejor atención posible.
@@ -65,4 +64,5 @@ export default function ServicesPage() {
     </PageLayout>
   );
 }
+
 
