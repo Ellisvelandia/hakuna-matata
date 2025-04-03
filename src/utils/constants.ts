@@ -45,20 +45,11 @@ export const NAV_LINKS = {
     { name: 'Cuidado Dental', path: '/cuidado-dental' },
     { name: 'Cirugía', path: '/cirugia' },
     { name: 'Esterilización', path: '/esterilizacion' },
-    { name: 'Terapia Láser', path: '/terapia-laser' },
-    { name: 'Acupuntura', path: '/acupuntura' },
-    { name: 'Quiropráctica', path: '/quiropractica' },
-    { name: 'Peluquería', path: '/peluqueria' },
   ],
   resources: [
     { name: 'Solicitud de Cita', path: '/solicitud-cita' },
     { name: 'Formulario de Información', path: '/formulario-informacion' },
-    { name: 'Enviar Registros', path: '/enviar-registros' },
-    { name: 'Admin Hospital', path: '/admin-hospital' },
-    { name: 'Recarga de Receta', path: '/recarga-receta' },
-    { name: 'Comprar Online', path: '/comprar-online' },
     { name: 'Registros de Mascota', path: '/registros-mascota' },
-    { name: 'Empleo', path: '/empleo' },
     { name: 'Preparaciones para Desastres', path: '/preparaciones-desastres' },
   ],
 };
@@ -90,3 +81,4 @@ export const PLACEHOLDER_IMAGES = {
   cat: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba',
   dog: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b',
 };
+

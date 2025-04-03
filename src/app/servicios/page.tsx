@@ -4,7 +4,7 @@ import PageLayout from '@/components/layout/PageLayout';
 import ServiceCard from '@/components/services/ServiceCard';
 
 export default function ServicesPage() {
-  // Services data
+  // Services data - updated to include only core services
   const services = [
     {
       title: "Bienestar",
@@ -35,30 +35,6 @@ export default function ServicesPage() {
       description: "Servicios de esterilización y castración seguros y efectivos, con protocolos de recuperación optimizados.",
       imageSrc: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       linkUrl: "/esterilizacion"
-    },
-    {
-      title: "Terapia Láser",
-      description: "Tratamientos con láser terapéutico para aliviar el dolor, reducir la inflamación y acelerar la curación de diversas condiciones.",
-      imageSrc: "https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      linkUrl: "/terapia-laser"
-    },
-    {
-      title: "Acupuntura",
-      description: "Técnicas de acupuntura veterinaria para el manejo del dolor y el tratamiento complementario de diversas condiciones.",
-      imageSrc: "https://images.unsplash.com/photo-1512675828443-4f454c42253a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      linkUrl: "/acupuntura"
-    },
-    {
-      title: "Quiropráctica",
-      description: "Ajustes quiroprácticos para mejorar la movilidad, reducir el dolor y optimizar la función del sistema nervioso de su mascota.",
-      imageSrc: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      linkUrl: "/quiropractica"
-    },
-    {
-      title: "Peluquería",
-      description: "Servicios profesionales de peluquería y estética para mantener a su mascota limpia, cómoda y con un aspecto inmejorable.",
-      imageSrc: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      linkUrl: "/peluqueria"
     }
   ];
 
@@ -86,28 +62,7 @@ export default function ServicesPage() {
           />
         ))}
       </div>
-
-      <div className="mt-16 bg-[#ffebcd] rounded-lg p-8 text-center">
-        <h3 className="text-2xl font-semibold mb-4">Atención de Emergencia 24/7</h3>
-        <p className="text-gray-700 mb-6">
-          Estamos disponibles las 24 horas del día, los 7 días de la semana para atender emergencias veterinarias. 
-          Nuestro equipo está preparado para actuar rápidamente en situaciones críticas para salvar la vida de su mascota.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a 
-            href="tel:+573113603168" 
-            className="inline-block bg-[#ff9800] text-white py-3 px-6 rounded-md font-medium hover:bg-[#e68a00] transition-colors"
-          >
-            Llamar Ahora
-          </a>
-          <Link 
-            href="/contacto" 
-            className="inline-block bg-white border border-[#ff9800] text-[#ff9800] py-3 px-6 rounded-md font-medium hover:bg-gray-50 transition-colors"
-          >
-            Más Información
-          </Link>
-        </div>
-      </div>
     </PageLayout>
   );
 }
+
