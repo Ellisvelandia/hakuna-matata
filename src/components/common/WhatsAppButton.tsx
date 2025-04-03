@@ -1,42 +1,51 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-/**
- * WhatsApp floating button component that appears on all pages
- * Includes a delay before showing
- */
-const WhatsAppButton = () => {
+type WhatsAppButtonProps = {
+  phoneNumber?: string;
+  delayMs?: number;
+};
+
+export default function WhatsAppButton({ 
+  phoneNumber = "573113603168",
+  delayMs = 1500 
+}: WhatsAppButtonProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show button after a short delay for better UX
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1500);
-
-    // Clean up
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+    const timer = setTimeout(() => setIsVisible(true), delayMs);
+    return () => clearTimeout(timer);
+  }, [delayMs]);
 
   return (
     <a
-      href="https://wa.me/573113603168"
-      className={`fixed bottom-6 right-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 flex items-center justify-center ${
-        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'
-      }`}
+      href={`https://wa.me/${phoneNumber}`}
+      className={`
+        fixed bottom-6 right-6 z-50 
+        bg-green-500 text-white p-3 rounded-full shadow-lg 
+        hover:bg-green-600 
+        transition-all duration-300 
+        flex items-center justify-center
+        focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
+        ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}
+      `}
       aria-label="Contactar por WhatsApp"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z" />
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="30" 
+        height="30" 
+        viewBox="0 0 24 24" 
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M12 2C6.48 2 2 6.48 2 12c0 2.17.7 4.19 1.89 5.84L2.05 22l4.16-1.84C7.81 21.34 9.83 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.85 0-3.57-.59-4.98-1.59l-.35-.26-3.67 1.62 1.62-3.67-.26-.35C3.59 15.57 3 13.85 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9z"/>
       </svg>
     </a>
   );
-};
+}
 
-export default WhatsAppButton;
 

@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
+type RootLayoutProps = {
   children: React.ReactNode;
-}) {
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="es">
       <body className="min-h-screen flex flex-col">
@@ -36,3 +36,4 @@ export default function RootLayout({
     </html>
   );
 }
+
