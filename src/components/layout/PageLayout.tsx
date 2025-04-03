@@ -1,46 +1,40 @@
 "use client";
 
-import React, { ReactNode } from 'react';
-import Image from 'next/image';
+import { type ReactNode } from "react";
+import Image from "next/image";
 
-interface PageLayoutProps {
+type PageLayoutProps = {
   title: string;
   backgroundImage?: string;
   children: ReactNode;
-}
+};
 
 /**
  * Reusable page layout component with a consistent header style
- * @param title - The page title displayed in the header
- * @param backgroundImage - Optional background image URL (defaults to a standard image)
- * @param children - The page content
+ * @param props Component properties
+ * @returns JSX.Element
  */
-const PageLayout: React.FC<PageLayoutProps> = ({ 
-  title, 
-  backgroundImage = "https://ext.same-assets.com/965708439/608452770.jpeg", 
-  children 
-}) => {
+export default function PageLayout({
+  title,
+  backgroundImage = "https://ext.same-assets.com/965708439/608452770.jpeg",
+  children,
+}: PageLayoutProps) {
   return (
-    <div>
+    <section className="min-h-screen">
       {/* Page Header */}
       <div className="relative h-64 bg-gray-200">
         <Image
           src={backgroundImage}
           alt={title}
           fill
+          priority
+          sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-4xl font-semibold text-white">{title}</h1>
-        </div>
       </div>
 
       {/* Page Content */}
-      <div className="container mx-auto py-12 px-4">
-        {children}
-      </div>
-    </div>
+      <main className="container mx-auto py-12 px-4">{children}</main>
+    </section>
   );
-};
-
-export default PageLayout;
+}
