@@ -143,7 +143,7 @@ export default function Header() {
             {/* CTA Button */}
             <Link
               href="/cita"
-              className="block w-full py-2.5 px-4 text-center rounded-lg bg-[#8cb9a3] text-white hover:bg-[#7aa891] transition-all duration-300 mb-4"
+              className="block w-full py-2.5 px-4 text-center rounded-lg bg-[#8cb9a3] text-white hover:bg-[#7aa891] transition-all duration-300 mb-6 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Solicitar una Cita
@@ -157,7 +157,7 @@ export default function Header() {
                 <li key={link.path}>
                   <Link
                     href={link.path}
-                    className="block px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                    className="block px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
