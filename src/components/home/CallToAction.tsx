@@ -25,7 +25,7 @@ const CallToAction = () => {
         />
         <h2 className="text-3xl mb-6 text-[#ff9800]">Visítanos</h2>
         <p className="text-gray-700 max-w-2xl mx-auto mb-8">Estamos disponibles 24 horas para atender a tu mascota con el cuidado y la atención que merece. Agenda tu cita hoy mismo.</p>
-        <Link href="/solicitud-cita" className="btn-primary bg-[#ff9800] hover:bg-[#e08700]">
+        <Link href="/cita" className="btn-primary bg-[#ff9800] hover:bg-[#e08700]">
           Solicitar una cita
         </Link>
       </div>
