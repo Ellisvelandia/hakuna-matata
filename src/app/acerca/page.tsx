@@ -6,7 +6,7 @@ import PageLayout from '@/components/layout/PageLayout';
 export default function AboutPage() {
   return (
     <PageLayout title="Acerca de Nosotros">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-12">
         {/* Left Column - Text Content */}
         <div>
           <h2 className="text-3xl font-semibold mb-6 text-[#8cb9a3]">Nuestra Historia</h2>

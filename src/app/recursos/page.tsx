@@ -33,7 +33,7 @@ export default function ResourcesPage() {
 
   return (
     <PageLayout title="Recursos">
-      <div className="max-w-4xl mx-auto mb-12 text-center">
+      <div className="max-w-4xl mx-auto my-12 text-center">
         <h2 className="text-3xl font-semibold mb-6 text-[#8cb9a3]">Centro de Recursos</h2>
         <p className="text-gray-700">
           Todo lo que necesitas para el cuidado de tu mascota en un solo lugar. 
