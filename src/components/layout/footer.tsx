@@ -13,9 +13,9 @@ import {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="bg-white">
       {/* Social Media Links */}
-      <div className="border-t border-gray-200 py-4">
+      <div className="border-t border-gray-200 py-4 bg-[#8cb9a3]/80">
         <div className="container mx-auto flex justify-center space-x-4">
           <a
             href="https://www.facebook.com/HakunaMatataVet"
@@ -42,7 +42,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Main Content */}
-      <div className="bg-[#ffebcd] py-8">
+      <div className="bg-[#8cb9a3]/80 py-8 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Column 1: Contact Info */}
@@ -57,21 +57,21 @@ const Footer = () => {
                   className="h-auto mr-3"
                 />
                 <div>
-                  <h2 className="text-xl font-bold text-[#ff9800]">
+                  <h2 className="text-xl font-bold text-white">
                     HAKUNA MATATA
                   </h2>
-                  <p className="text-sm text-gray-600">CLÍNICA VETERINARIA</p>
+                  <p className="text-sm text-white/90">CLÍNICA VETERINARIA</p>
                 </div>
               </div>
 
               {/* Contact Information */}
               <div className="flex items-center">
-                <span className="inline-block mr-2">
+                <span className="inline-block mr-2 text-white">
                   <MapPin size={20} />
                 </span>
                 <a
                   href="https://maps.google.com/?q=Cl. 29 #7-18, Girardot, Cundinamarca, Colombia"
-                  className="hover:text-primary"
+                  className="hover:text-white/80 transition-colors"
                 >
                   Cl. 29 #7-18
                   <br />
@@ -80,16 +80,16 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center">
-                <span className="inline-block mr-2">
+                <span className="inline-block mr-2 text-white">
                   <Phone size={20} />
                 </span>
-                <a href="tel:+573113603168" className="hover:text-primary">
+                <a href="tel:+573113603168" className="hover:text-white/80 transition-colors">
                   +57 311 3603168
                 </a>
               </div>
 
               <div className="flex items-start">
-                <span className="inline-block mr-2 mt-1">
+                <span className="inline-block mr-2 mt-1 text-white">
                   <Clock size={20} />
                 </span>
                 <div>
@@ -100,7 +100,7 @@ const Footer = () => {
 
             {/* Column 2: Map */}
             <div>
-              <div className="h-64 w-full bg-gray-200 rounded relative overflow-hidden">
+              <div className="h-64 w-full bg-white rounded-lg shadow-md relative overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.0123456789!2d-74.80052720378369!3d4.302597962105834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMTgnMDkuNCJOIDc0wrA0OCcwMS45Ilc!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"
                   className="absolute top-0 left-0 w-full h-full"
@@ -117,10 +117,10 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="py-4">
+      <div className="bg-[#8cb9a3] py-4">
         <div className="container mx-auto px-4 text-center text-sm">
           <div className="mb-2">
-            <p className="text-gray-600">
+            <p className="text-white">
               © {new Date().getFullYear()} Hakuna Matata Clínica Veterinaria -
               Todos los derechos reservados
             </p>
