@@ -12,6 +12,11 @@ const Header = () => {
   const pathname = usePathname();
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
+  // Function to set dropdown refs
+  const setDropdownRef = (key: string, el: HTMLDivElement | null) => {
+    dropdownRefs.current[key] = el;
+  };
+
   // Handle window resize to determine if we're on mobile
   useEffect(() => {
     const handleResize = () => {
@@ -109,7 +114,7 @@ const Header = () => {
           <div>
             <a
               href="/cita"
-              className="btn-primary"
+              className="inline-block px-6 py-3 rounded-full bg-[#8cb9a3] text-white hover:bg-[#7aa08a] transition duration-300"
             >
               Solicitar una Cita
             </a>
@@ -122,7 +127,7 @@ const Header = () => {
         <div className="container mx-auto py-2 px-4">
           <button
             onClick={toggleMobileMenu}
-            className="flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#ff9800]"
+            className="flex items-center justify-center p-2 rounded-md text-[#8cb9a3] hover:text-[#7aa08a] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#8cb9a3]"
             aria-expanded={mobileMenuOpen ? 'true' : 'false'}
           >
             <span className="sr-only">Abrir menú principal</span>
@@ -153,14 +158,23 @@ const Header = () => {
       </div>
 
       {/* Navigation Bar */}
-      <nav className={`bg-white border-t border-b border-gray-200 ${isMobile && !mobileMenuOpen ? 'hidden' : 'block'}`}>
+      <nav className={`bg-[#8cb9a3] border-t border-b border-gray-200 ${isMobile && !mobileMenuOpen ? 'hidden' : 'block'}`}>
         <div className="container mx-auto">
-          <ul className="flex flex-col md:flex-row justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-12 py-4 md:py-3">
+          <ul className="flex flex-col md:flex-row justify-center md:justify-center space-y-2 md:space-y-0 md:space-x-12 py-4 md:py-3">
             {/* Main Pages */}
             <li>
               <Link
+                href="/"
+                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md text-white font-medium hover:text-gray-100 ${isActive('/') && pathname === '/' ? 'border-b-2 border-white md:bg-transparent' : ''}`}
+              >
+                INICIO
+              </Link>
+            </li>
+
+            <li>
+              <Link
                 href="/acerca"
-                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md ${isActive('/acerca') ? 'text-[#ff9800] bg-gray-100 md:bg-transparent' : ''}`}
+                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md text-white font-medium hover:text-gray-100 ${isActive('/acerca') ? 'border-b-2 border-white md:bg-transparent' : ''}`}
               >
                 ACERCA
               </Link>
@@ -169,7 +183,7 @@ const Header = () => {
             <li>
               <Link
                 href="/servicios"
-                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md ${isActive('/servicios') ? 'text-[#ff9800] bg-gray-100 md:bg-transparent' : ''}`}
+                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md text-white font-medium hover:text-gray-100 ${isActive('/servicios') ? 'border-b-2 border-white md:bg-transparent' : ''}`}
               >
                 SERVICIOS
               </Link>
@@ -178,7 +192,7 @@ const Header = () => {
             <li>
               <Link
                 href="/recursos"
-                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md ${isActive('/recursos') ? 'text-[#ff9800] bg-gray-100 md:bg-transparent' : ''}`}
+                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md text-white font-medium hover:text-gray-100 ${isActive('/recursos') ? 'border-b-2 border-white md:bg-transparent' : ''}`}
               >
                 RECURSOS
               </Link>
@@ -187,7 +201,7 @@ const Header = () => {
             <li>
               <Link
                 href="/contacto"
-                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md ${isActive('/contacto') ? 'text-[#ff9800] bg-gray-100 md:bg-transparent' : ''}`}
+                className={`navbar-link block md:inline-block py-2 px-3 md:px-0 rounded-md text-white font-medium hover:text-gray-100 ${isActive('/contacto') ? 'border-b-2 border-white md:bg-transparent' : ''}`}
               >
                 CONTACTO
               </Link>
@@ -198,7 +212,7 @@ const Header = () => {
               <div
                 className={`navbar-link cursor-pointer flex items-center justify-between py-2 px-3 rounded-md ${activeDropdown === 'about' ? 'bg-gray-100' : ''}`}
                 onClick={() => toggleDropdown('about')}
-                ref={(el) => dropdownRefs.current['about'] = el}
+                ref={(el) => setDropdownRef('about', el)}
               >
                 <span>Acerca de Nosotros</span>
                 <svg
@@ -211,11 +225,11 @@ const Header = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              <div className={`dropdown-menu ${isMobile ? 'relative bg-gray-50 rounded-md mt-1 overflow-hidden' : 'absolute bg-white shadow-md z-10 min-w-[200px] mt-2'} ${activeDropdown === 'about' ? 'block' : 'hidden md:group-hover:block'}`}>
-                <Link href="/nuestro-equipo" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/nuestro-equipo') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Nuestro Equipo</Link>
-                <Link href="/amigable-con-gatos" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/amigable-con-gatos') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Amigable con Gatos</Link>
-                <Link href="/sin-miedo" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/sin-miedo') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Sin Miedo</Link>
-                <Link href="/galeria-fotos" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/galeria-fotos') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Galería de Fotos</Link>
+              <div className={`dropdown-menu ${isMobile ? 'relative bg-[#7aa08a] rounded-md mt-1 overflow-hidden' : 'absolute bg-white shadow-md z-10 min-w-[200px] mt-2'} ${activeDropdown === 'about' ? 'block' : 'hidden md:group-hover:block'}`}>
+                <Link href="/nuestro-equipo" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/nuestro-equipo') ? 'bg-[#6b9079]' : ''}`}>Nuestro Equipo</Link>
+                <Link href="/amigable-con-gatos" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/amigable-con-gatos') ? 'bg-[#6b9079]' : ''}`}>Amigable con Gatos</Link>
+                <Link href="/sin-miedo" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/sin-miedo') ? 'bg-[#6b9079]' : ''}`}>Sin Miedo</Link>
+                <Link href="/galeria-fotos" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/galeria-fotos') ? 'bg-[#6b9079]' : ''}`}>Galería de Fotos</Link>
               </div>
             </li>
 
@@ -224,7 +238,7 @@ const Header = () => {
               <div
                 className={`navbar-link cursor-pointer flex items-center justify-between py-2 px-3 rounded-md ${activeDropdown === 'services' ? 'bg-gray-100' : ''}`}
                 onClick={() => toggleDropdown('services')}
-                ref={(el) => dropdownRefs.current['services'] = el}
+                ref={(el) => setDropdownRef('services', el)}
               >
                 <span>Nuestros Servicios</span>
                 <svg
@@ -237,16 +251,16 @@ const Header = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              <div className={`dropdown-menu ${isMobile ? 'relative bg-gray-50 rounded-md mt-1 overflow-hidden' : 'absolute bg-white shadow-md z-10 min-w-[200px] mt-2'} ${activeDropdown === 'services' ? 'block' : 'hidden md:group-hover:block'}`}>
-                <Link href="/bienestar" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/bienestar') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Bienestar</Link>
-                <Link href="/vacunas" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/vacunas') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Vacunas</Link>
-                <Link href="/cuidado-dental" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/cuidado-dental') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Cuidado Dental</Link>
-                <Link href="/cirugia" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/cirugia') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Cirugía</Link>
-                <Link href="/esterilizacion" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/esterilizacion') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Esterilización</Link>
-                <Link href="/terapia-laser" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/terapia-laser') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Terapia Láser</Link>
-                <Link href="/acupuntura" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/acupuntura') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Acupuntura</Link>
-                <Link href="/quiropractica" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/quiropractica') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Quiropráctica</Link>
-                <Link href="/peluqueria" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/peluqueria') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Peluquería</Link>
+              <div className={`dropdown-menu ${isMobile ? 'relative bg-[#7aa08a] rounded-md mt-1 overflow-hidden' : 'absolute bg-white shadow-md z-10 min-w-[200px] mt-2'} ${activeDropdown === 'services' ? 'block' : 'hidden md:group-hover:block'}`}>
+                <Link href="/bienestar" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/bienestar') ? 'bg-[#6b9079]' : ''}`}>Bienestar</Link>
+                <Link href="/vacunas" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/vacunas') ? 'bg-[#6b9079]' : ''}`}>Vacunas</Link>
+                <Link href="/cuidado-dental" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/cuidado-dental') ? 'bg-[#6b9079]' : ''}`}>Cuidado Dental</Link>
+                <Link href="/cirugia" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/cirugia') ? 'bg-[#6b9079]' : ''}`}>Cirugía</Link>
+                <Link href="/esterilizacion" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/esterilizacion') ? 'bg-[#6b9079]' : ''}`}>Esterilización</Link>
+                <Link href="/terapia-laser" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/terapia-laser') ? 'bg-[#6b9079]' : ''}`}>Terapia Láser</Link>
+                <Link href="/acupuntura" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/acupuntura') ? 'bg-[#6b9079]' : ''}`}>Acupuntura</Link>
+                <Link href="/quiropractica" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/quiropractica') ? 'bg-[#6b9079]' : ''}`}>Quiropráctica</Link>
+                <Link href="/peluqueria" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/peluqueria') ? 'bg-[#6b9079]' : ''}`}>Peluquería</Link>
               </div>
             </li>
 
@@ -255,7 +269,7 @@ const Header = () => {
               <div
                 className={`navbar-link cursor-pointer flex items-center justify-between py-2 px-3 rounded-md ${activeDropdown === 'resources' ? 'bg-gray-100' : ''}`}
                 onClick={() => toggleDropdown('resources')}
-                ref={(el) => dropdownRefs.current['resources'] = el}
+                ref={(el) => setDropdownRef('resources', el)}
               >
                 <span>Recursos para Mascotas</span>
                 <svg
@@ -268,16 +282,16 @@ const Header = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              <div className={`dropdown-menu ${isMobile ? 'relative bg-gray-50 rounded-md mt-1 overflow-hidden' : 'absolute bg-white shadow-md z-10 min-w-[200px] mt-2'} ${activeDropdown === 'resources' ? 'block' : 'hidden md:group-hover:block'}`}>
-                <Link href="/solicitud-cita" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/solicitud-cita') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Solicitud de Cita</Link>
-                <Link href="/formulario-informacion" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/formulario-informacion') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Formulario de Información</Link>
-                <Link href="/enviar-registros" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/enviar-registros') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Enviar Registros</Link>
-                <Link href="/admin-hospital" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/admin-hospital') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Admin Hospital</Link>
-                <Link href="/recarga-receta" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/recarga-receta') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Recarga de Receta</Link>
-                <Link href="/comprar-online" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/comprar-online') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Comprar Online</Link>
-                <Link href="/registros-mascota" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/registros-mascota') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Registros de Mascota</Link>
-                <Link href="/empleo" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/empleo') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Empleo</Link>
-                <Link href="/preparaciones-desastres" className={`block px-4 py-2 hover:bg-gray-100 ${isActive('/preparaciones-desastres') ? 'text-[#ff9800] bg-gray-100' : ''}`}>Preparaciones para Desastres</Link>
+              <div className={`dropdown-menu ${isMobile ? 'relative bg-[#7aa08a] rounded-md mt-1 overflow-hidden' : 'absolute bg-white shadow-md z-10 min-w-[200px] mt-2'} ${activeDropdown === 'resources' ? 'block' : 'hidden md:group-hover:block'}`}>
+                <Link href="/solicitud-cita" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/solicitud-cita') ? 'bg-[#6b9079]' : ''}`}>Solicitud de Cita</Link>
+                <Link href="/formulario-informacion" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/formulario-informacion') ? 'bg-[#6b9079]' : ''}`}>Formulario de Información</Link>
+                <Link href="/enviar-registros" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/enviar-registros') ? 'bg-[#6b9079]' : ''}`}>Enviar Registros</Link>
+                <Link href="/admin-hospital" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/admin-hospital') ? 'bg-[#6b9079]' : ''}`}>Admin Hospital</Link>
+                <Link href="/recarga-receta" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/recarga-receta') ? 'bg-[#6b9079]' : ''}`}>Recarga de Receta</Link>
+                <Link href="/comprar-online" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/comprar-online') ? 'bg-[#6b9079]' : ''}`}>Comprar Online</Link>
+                <Link href="/registros-mascota" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/registros-mascota') ? 'bg-[#6b9079]' : ''}`}>Registros de Mascota</Link>
+                <Link href="/empleo" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/empleo') ? 'bg-[#6b9079]' : ''}`}>Empleo</Link>
+                <Link href="/preparaciones-desastres" className={`block px-4 py-2 text-white hover:bg-[#6b9079] ${isActive('/preparaciones-desastres') ? 'bg-[#6b9079]' : ''}`}>Preparaciones para Desastres</Link>
               </div>
             </li>
           </ul>
